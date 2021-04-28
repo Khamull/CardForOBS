@@ -6,3 +6,5 @@ Did it for the live from a VW BUs clube https://www.youtube.com/watch?v=jaVQU9Gh
 To use, simply add a Browser source to your scene, select the file Card.html and it should popup!
 Change as you will to display your text and images!
 
+I do belive a lot can be improved, and if I do, I will update here!
+
