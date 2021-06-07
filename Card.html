@@ -14,21 +14,37 @@
 		{
 		  background-color: #000000;
 		  text-transform: uppercase;
-		  text-align: center;
+		  text-align: left;
+		}
+		#idCard {
+			background-color: white !important;
+			border-radius: 10px !important;
+		}
+		#imgCol {
+			padding-left: 0px !important;
+		}
+		.img-thumbnail {
+			border-radius: 10px !important;
+			width: 150px; 
+			height: auto;
 		}
 	</style>
 
   </head>
   <body>
-	<p id="result">
+	</p>
 	<div class="container">
-		<div class="card align-self-end" id="card" style="width: 10rem; display: none;">
-		  <img class="card-img-top" id="cimage" src="https://via.placeholder.com/350x150" alt="Toca Das Corujinhas">
-		  <div class="card-body">
-			<h6 class="card-title" id="ctitle">Toca das Corujinhas</h6>
-		  </div>
+	  <div id="idCard" class="row align-items-start" style="visibility: hidden;">
+		<div id="imgCol" class="col-sm-2">
+		  <img class="img-thumbnail" id="cimage" src="https://via.placeholder.com/150x150" alt="Toca Das Corujinhas">
 		</div>
+		<div class="col-sm-10">
+		  <h1><span id="ctitle">Toca das Corujinhas</span></h1>
+		  <h5>siga nas redes sociais :</h5><h4><span id="curls"></span></h4>
+		</div>
+	 </div>
 	</div>
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -48,38 +64,55 @@
 						, 'file:///F:/Toca/marquee/LogosCard/LogoKombiClubeCuritiba.jpg'
 						, 'file:///F:/Toca/marquee/LogosCard/KombiMagazineLogo.png'
 						, 'file:///F:/Toca/marquee/LogosCard/OlhodaCoruja.png'
+						, 'file:///F:/Toca/marquee/LogosCard/OldClassicsLogo.png'
 						, 'file:///F:/Toca/marquee/LogosCard/TocaDasCorujas.png'
 						];
+			var redes = ['GUIA ACESSÓRIOS'
+						, 'site: coelhosafaris.com'
+						, 'instagram @runner_parts/ || site: runnerparts.com.br'
+						, 'facebook/autovidrosverde/'
+						, 'site: kombiseta.com || instagram @kombi_jorge_uniformes'
+						, 'instagram @militec1brasil || facebook/militecbrasil'
+						, 'instagram @revistavwklassik || site: vwklassik.com.br'
+						, 'facebook/KOMBICLUBECURTIIBA/'
+						, 'site issuu.com/kombimagazine'
+						, 'instagram @olhodacoruja || youtube.com/OlhodaCoruja'
+						, 'instagram @old_classics_oficina'
+						, 'instagram @TOCADASCORUJINHASBR'
+						];
+			
 			var titles = ['GUIA ACESSÓRIOS'
 						, 'COELHO SAFARI'
 						, 'Runner Parts Brasil'
 						, 'auto vidros verde'
-						, 'KOMBISETA \ estamparia'
+						, 'KOMBISETA Estamparia'
 						, 'Militec Brasil'
 						, 'VW KLASSIK'
 						, 'KOMBI CLUBE CURITIBA'
 						, 'KOMBI MAGAZINE'
-						, '@olho \da \coruja'
-						, '@TOCA \DAS \CORUJINHAS BR'
+						, 'Olho da Coruja'
+						, 'Old Classics - Oficina Especializada'
+						, 'TOCA DAS CORUJINHAS'
 						];
 						
-			setInterval(showStuff, 60000);
+			setInterval(showStuff, 10000);
 
 			function showStuff() {
 			
-				if(document.getElementById('card').style.display == 'none'){
-					document.getElementById('card').style.display = 'block';
+				if(document.getElementById('idCard').style.visibility == 'hidden'){
+					document.getElementById('idCard').style.visibility = 'visible';
 					iterate();
 				}
 				else
-					document.getElementById('card').style.display = 'none';
+					document.getElementById('idCard').style.visibility = 'hidden';
 			}
 			
 			function iterate(){
-				document.getElementById("ctitle").innerText = titles[i];
 				$("#cimage").attr("src", images[i]);
+				document.getElementById("ctitle").innerText = titles[i];
+				document.getElementById("curls").innerText = redes[i];
 				i++;
-				if(i >= 11)
+				if(i >= 12)
 					i = 0;
 			}
 
